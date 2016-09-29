@@ -1,0 +1,25 @@
+﻿@model GrandVhirpusCodeDojo.Models.Registration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  
+    <meta name="viewport" content="width=device-width" />
+    <title>ThankYou</title>
+</head>
+<body style="background-color:antiquewhite; color:blue">
+    <div> 
+        <h2> Thank you, @Model.FirstName @Model.LastName for Signing Up.</h2>
+        <h3>Welcome to Grant Chirpus' Code Dojo</h3>
+        <h3> @Model.FirstName, you selected @Model.Course</h3>
+        <h3> Your course starting date is @ViewBag.DisplayDate </h3>
+        
+
+    </div>
+</body>
+</html>

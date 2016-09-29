@@ -1,0 +1,54 @@
+﻿@model GrandVhirpusCodeDojo.Models.Registration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Styles.css" rel="stylesheet"  type="text/css"/>
+    <title>Registration Form</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            <p>APPLICATION FORM</p><br />
+            <p> First name @Html.TextBoxFor(m => m.FirstName)</p>
+            <p> Last name @Html.TextBoxFor(m => m.LastName)</p>
+            <p>
+                Gender @Html.RadioButtonFor(m => m.Gender, "Male")Male
+                @Html.RadioButtonFor(m => m.Gender, "Female")Female
+            </p>
+            <p> Email @Html.TextBoxFor(m => m.Email)</p>
+            <p> Phone number @Html.TextBoxFor(m => m.Phone)</p>
+
+            <p>
+                Country @Html.DropDownListFor(m => m.Country, new[] {
+                   new SelectListItem() {Text = "USA", Value = "USA" },
+                   new SelectListItem() { Text= "India", Value = "India" },
+                new SelectListItem() {Text = "China", Value = "China" },
+                   new SelectListItem() { Text= "Canada", Value = "Canada" },
+                new SelectListItem() {Text = "Mexico", Value = "Mexico" },
+                   new SelectListItem() { Text= "UK", Value = "UK" }}, "Choose an option")
+            </p>
+            <p> Zipcode @Html.TextBoxFor(m => m.Zipcode)</p>
+            <p>
+                Course  @Html.DropDownListFor(m => m.Course, new[] {
+                   new SelectListItem() {Text = "Business", Value = "Business" },
+                   new SelectListItem() { Text= "Information System", Value = "Information System" },
+                new SelectListItem() {Text = "BA", Value = "BA" },
+                   new SelectListItem() { Text= "QA", Value = "QA" },
+                new SelectListItem() {Text = "Programing Language", Value = "Programing Language" }
+                }, "Choose an option")
+            </p>
+            <input type="submit" value="Submit Form" />
+        }
+
+    </div>
+</body>
+</html>
